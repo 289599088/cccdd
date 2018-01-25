@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<style>
+    .box{
+        width: 500px;
+        height: auto;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+
+
+
+<button class="tianjia">添加色子</button>
+<button class="play">play</button>
+<button class="stop">stop</button>
+色子个数：<span id="geshu">0</span>
+色子点数：<span id="dianshu">0</span>
+
+
+
+<div class="box"></div>
+
+
+
+
+</body>
+</html>
+
+
+<script>
+
+
+
+
+    var box=document.getElementsByClassName("box")[0];
+    var play=document.getElementsByClassName("play")[0];
+    var stop=document.getElementsByClassName("stop")[0];
+    var tianjia=document.getElementsByClassName('tianjia')[0];
+    var geshu=document.getElementById("geshu");
+    var tid;
+    var num=0//色子个数
+    var asd=0//色子点数
+
+
+    tianjia.onclick=function(){
+        var aa=document.createElement("img");                            //aa是添加的图片
+        var n = randomNumber(1, 6);                                        //n是随机数  和图片名字相对应
+        aa.src="img/"+n+".gif";                                          //aa图片的路径
+        box.appendChild(aa)                                                //给盒子里添加图片
+        //console.log(aa)
+
+        geshu.innerHTML=++num;                                           //个数里的内容 =   每添加一个图片的总数num    色则的个数
+
+        asd += n;                                                          //asd+=n
+        dianshu.innerHTML=asd
+
+
+
+    }
+    function randomNumber(min, max) {
+        return Math.round(Math.random()*(max - min) + min);
+    }                                                                            //随机数
+
+
+
+
+    //添加随机点数的色子
+
+
+
+
+    play.onclick= function () {                                        //给开始按钮添加一个绑定事件
+
+
+        if (tid) {                                                       //  tid=定时器的返回id
+            return;                                                      //判断是否有定时器正在执行  如果有   就不执行新的定时器
+        }
+
+        tid = setInterval(yao, 100);                                      //定时器的执行速度
+    };
+
+
+
+    function yao(){
+        var tu=box.getElementsByTagName("img");                           //通过for循环遍历所有图片   然后给图片路径随机数
+        var c = 0;
+        for(var i = 0;i < tu.length; i++) {
+            var n = randomNumber(1, 6);
+            tu[i].src = 'img/'+n+'.gif';
+            c += n;                                                            //c  += n     所有图片的点数相加
+    }
+
+
+
+        asd=c;                                                                  //c是点数
+        dianshu.innerHTML=c                                                    //添加到点数的span里
+
+
+
+    }
+        //摇色字
+
+
+
+    stop.onclick=function(){
+        clearInterval(tid);
+        tid=undefined                                                       //让定时器返回的id等于undefined
+    };
+
+    //关闭  摇色子时  开启的定时器
+
+
+
+
+</script>

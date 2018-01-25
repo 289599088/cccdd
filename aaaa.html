@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				margin: 0 auto;
+				position: relative;
+			}
+			.box div{
+				width: 40px;
+				height: 40px;
+				background-image: url(b1.jpg);
+				background-repeat: no-repeat;
+				background-size: 400px 400px;
+				float: left;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<script type="text/javascript">
+			var	n=100;
+			var zh=true;
+			var Box=document.querySelector('.box');
+			for(var i=0;i<10;i++){
+				for(var z=0;z<10;z++){
+					var Div=document.createElement('div');
+					Div.style.backgroundPositionX= -40*(z%10)+'px';
+					Div.style.backgroundPositionY= -40*(i%10)+'px';
+					Div.style.left=z*40+'px';
+					Div.style.top=i*40+'px';
+					Box.appendChild(Div);
+				}
+			}
+			var Div2=document.querySelectorAll('.box div');
+			Box.onclick=function(){
+				if(zh==true){
+					timer=setInterval(function(){
+						n--;
+						Div2[n].style.transition=sj(1.2,1.5)+'s';
+						Div2[n].style.backgroundImage= 'url(b2.jpg)';
+						if(n==0){
+							clearInterval(timer);
+						}
+					},10)
+					zh=false;
+				}else if(zh==false){
+					timer=setInterval(function(){
+						Div2[n].style.transition=sj(1.2,1.5)+'s';
+						Div2[n].style.backgroundImage= 'url(b2.jpg)';
+						n++;
+						if(n==100){
+							clearInterval(timer);
+						}
+					},10)
+					zh=true;
+				}
+			}
+			function sj(min, max) {
+				return Math.floor(Math.random() * (max - min+5) + min);
+			}
+		</script>
+	</body>
+</html>

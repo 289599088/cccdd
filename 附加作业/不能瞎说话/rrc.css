@@ -1,0 +1,164 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+body{
+	max-width: 1200px;
+	height: auto;
+}
+/*头部*/
+.header{
+	width: 90%;
+	float: left;
+	padding: 0 5%;
+}
+.logo{
+	width: 15%;
+	float: left;
+	background-color: #fff;
+}
+.logo img{
+	width: 100%;
+	margin-top: 3%;
+}
+/*导航*/
+.nav{
+	width: 55%;
+	float: left;
+}
+.nav ul li{
+	width: 13.5%;
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	font-family: "微软雅黑";
+}
+.nav li{
+	float: left;
+	margin-top: 3%;
+	cursor: pointer;
+}
+.nav li img{
+	width: 100%;
+	margin:-14% 0 0 20%;
+}
+/*登录*/
+.dl{
+	width: 25%;
+	float: left;
+	margin-left: 5%;
+}
+.span1{
+	width: 40%;
+	float: left;
+	line-height: 52px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.span1 img{
+	float: left;
+	margin:13% 10% 0 0;
+	width: 20%;
+}
+.span1 img:hover{
+	background-image:url(img/loadin-h.png);
+}
+.span1 a{
+	color: black;
+}
+.span1 a:hover{
+	color: #ec5f34;
+}
+.span2{
+	width: 60%;
+	float: left;
+	line-height: 50px;
+	color: #ec5f34;
+	font-weight: bold;
+}
+.span2 img{
+	float: left;
+	margin:13% 5% 0 8%;
+	width: 10%;
+}
+/*banner*/
+.banner{
+	width: 100%
+	float:left;
+	position: relative;
+}
+.banner img{
+	width: 100%
+}
+.banner ul{
+	position: absolute;
+	left: 76%;
+	top: 36%;
+	width: 18%;
+	background: #000;
+}
+.banner li{
+	width: 94%;
+	padding:5% 3%;
+	border-bottom: 1px #999 solid;
+    color: #fff;
+    cursor: pointer;
+}
+.banner li:hover{
+	background-color: #666;
+}
+/*买*/
+.mai{
+	width: 90%;
+	margin: 0 5%;
+}
+.mai_left{
+	width: 60%;
+	float: left;
+}
+.mai_3 img{
+	width: 15%;
+	margin: 2%;
+	float: left;
+}
+.mai_1{
+	width: 80%;
+	float: left;
+}
+.mai_1 li{
+	background: url(img/buy-ico1.png) no-repeat 10px 13px;
+	text-indent: 30px;
+	line-height: 42px;
+	font-size: 14px;
+}
+.mai_1 li a{
+	margin: 0 1%;
+	color: #000104;
+}
+.mai_2{
+	width: 50%;
+	float: left;
+	border:1px solid #ccc;
+	box-sizing: border-box;
+	padding-left: 2%;
+}
+.mai_2 input{
+	line-height: 40px;
+	float: left;
+	border:none;
+	outline: medium;
+}
+.mai_2 img{
+	width: 5%;
+	float: right;
+	padding:5.3% 5%;
+	border:1px solid #ccc;
+	cursor: pointer;
+}
+.mai-right{
+	width: 40%;
+	float: left;
+}
+

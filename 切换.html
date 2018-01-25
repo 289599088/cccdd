@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	
+	<style type="text/css">
+		
+		#showBox {
+			width:200px;
+			height: 200px;
+			margin:0 auto;
+		}
+
+	</style>
+
+</head>
+<body>
+	
+	<div id="showBox">
+		
+	</div>
+
+	
+</body>
+
+<script type="text/javascript">
+	
+	window.onload = function () {
+		for(var i = 0; i < 10;i++){
+			for(var j =0; j < 10; j++) {
+				var newDiv = document.createElement('div');
+				newDiv.style.width = showBox.clientWidth / 10 + 'px';
+				newDiv.style.height = showBox.clientHeight / 10 + 'px';
+				newDiv.style.float = 'left';
+				newDiv.style.backgroundImage = 'url(b1.jpg)';
+
+				newDiv.style.backgroundPositionX = -j * 20 + 'px';
+				newDiv.style.backgroundPositionY = -i*20 + 'px';
+
+				newDiv.style.transition = randomNuber(2, 5)+'s';
+
+				showBox.appendChild(newDiv);
+			}
+		}
+
+
+		showBox.onclick = function () {
+			
+			var divs = this.children;
+			for(var p=0;p<=divs.length;p++){
+				divs[p].style.opacity="0"
+				showBox.style.backgroundImage = 'url(b2.jpg)';
+			}
+
+		}
+
+	}
+
+	function randomNuber(min, max) {
+		return Math.random()*(max - min) + min;
+	}
+
+
+</script>
+
+
+</html>
